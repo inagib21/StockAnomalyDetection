@@ -3,9 +3,8 @@ language: Python
 variables:
   - name: output
     inputType: OutputTopic
-    description: Name of the output topic to write into
     defaultValue: stocks
-    required: true
+    required: false
 dockerfile: dockerfile
 runEntryPoint: main.py
 defaultFile: main.py
