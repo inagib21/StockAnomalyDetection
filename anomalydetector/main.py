@@ -56,13 +56,31 @@ def isolation_forest_rule(trade_data):
     trade_data['isolation_forest_anomaly'] =bool(score[0]<0 )# anomalies are indicated by negative scores
     return trade_data
 
+def combine_anomalies(trade_data):
+    anomalies =[]
+
+    if trade_data.get('high_volume-anomaly'):
+        anomalies.append('High Volume')
+    if trade_data.get('isolation_forest_anomaly'):
+        anomalies.append('Isolation Forest Anomaly')
+
+    trade_data['anomalies'] = anomalies if anomalies else None 
+
+    return trade_data   
+
+
+
 
 if __name__ == "__main__":  
     sdf = app.dataframe(input_topic)
     sdf = (sdf
            .apply(high_volume_rule)
            .apply(isolation_forest_rule)
+           .apply(combine_anomalies)
            )
+    
+    # Filter out only rows where 1 or more anomalies are detected
+    sdf = sdf.filter(lambda row: row.get('anomalies' and len(row['anomalies']) >= 1))
            
     sdf.to_topic(output_topic)
     
