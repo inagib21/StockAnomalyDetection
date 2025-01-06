@@ -7,12 +7,12 @@ This project demonstrates how to build a modern anomaly detection pipeline with 
 
 ## **Project Features**
 
-- Architect a complete anomaly detection pipeline  
-- Fetch stock market data via HTTP  
-- Set up a stock data producer using Quix Streams  
-- Implement an anomaly detection system with Isolation Forests  
-- Perform real-time data transformation and processing with Quix Streams  
-- Containerize the project using Docker for streamlined deployment  
+- a complete anomaly detection pipeline  
+- Fetching stock market data via HTTP  
+- stock data producer using Quix Streams  
+- Sn anomaly detection system with Isolation Forests  
+- Real-time data transformation and processing with Quix Streams  
+- Docker for streamlined deployment  
 
 ---
 
