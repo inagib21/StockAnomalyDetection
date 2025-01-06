@@ -19,7 +19,7 @@ This project demonstrates how to build a modern anomaly detection pipeline with 
 ## **Pipeline Overview**
 
 1. **Data Collection**  
-   - Historical price data of NVDIA Obtained from [Data Bento] (https://databento.com/)
+   - Historical price data of NVDIA Obtained from [Data Bento](https://databento.com/)
    - Converts the data into JSON format and publishes it to a Kafka topic.  
 
 2. **Data Transformation & Anomaly Detection**  
